@@ -9,6 +9,6 @@ status:
         color = 'error'
       else
         color = 'success'
-        end
+      end
 
       [color, "\u270D"]
