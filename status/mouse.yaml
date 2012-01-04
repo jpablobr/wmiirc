@@ -1,0 +1,14 @@
+status:
+  mouse:
+    script: |
+      def enabled
+       !!(`xinput list-props "ImPS/2 ALPS GlidePoint" | awk '/Device Enabled/ {print $NF}'`.match /1/)
+      end
+    label: |
+      if enabled
+        color = 'error'
+      else
+        color = 'success'
+        end
+
+      [color, "\u270D"]

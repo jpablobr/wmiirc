@@ -3,7 +3,7 @@ import:
   - status/music/mpd.yaml
   - control/*.yaml
   - control/action/*.yaml
-  # - display/tags.yaml
+  - display/tags.yaml
   - display/barlet.yaml
   - display/status.yaml
   - display/client.yaml
@@ -12,7 +12,7 @@ import:
 
 display:
   bar: bottom
-  font: 'xft:Sans-9'
+  font: 'xft:Sans-8'
   border: 1
   column:
     mode: default
@@ -66,6 +66,8 @@ display:
     - clock:
         params:
           format: '%l:%M%P %a %m/%d'
+    - mouse:
+        refresh: 1
 
 control:
   action:
