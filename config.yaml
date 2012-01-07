@@ -11,7 +11,7 @@ import:
   - display/desktop/feh.yaml
 
 display:
-  bar: bottom
+  bar: top
   font: 'xft:Sans-8'
   border: 1
   column:
@@ -23,7 +23,7 @@ display:
   client:
     rule: |
       /^pcmanfm:/ group=0
-      /^firefox:/ group=0 tags=www
+      /^chromium:/ group=0 tags=www
 
   refresh: 30
   status:
@@ -67,14 +67,13 @@ display:
         params:
           format: '%l:%M%P %a %m/%d'
     - mouse:
-        refresh: 1
 
 control:
   action:
-    negative: launch! 'xcalib -invert -alter'
-    terminal: launch 'term'
-    browser:  launch 'google-chrome'
-    filer:    launch 'nautilus'
+    negative:        launch! 'xcalib -invert -alter'
+    terminal:        launch 'term'
+    browser:         launch 'chromium'
+    filer:           launch 'nautilus'
 
     desktop: | # dock laptop to my desk
       system 'xrandr --output HDMI1 --auto --output LVDS1 --off --dpi 96'
@@ -120,10 +119,10 @@ control:
     grab: Mod1
 
   keyboard:
-    up:      t
+    up:      p
     down:    n
-    left:    h
-    right:   s
+    left:    j
+    right:   k
     root:    Mod4-
     send:    ${root}Shift-
     size:    ${root}Control-
@@ -135,8 +134,8 @@ control:
   keyboard_action:
     XF86Display:              negative
     ${root}x:                 terminal
-    ${root}k:                 browser
-    ${root}j:                 filer
+    ${root}h:                 browser
+    ${root}b:                 filer
 
     #-------------------------------------------------------------------------
     # basic
@@ -151,12 +150,13 @@ control:
 
     ${root}a:                 focus_client_menu
     ${root}Shift-a:           client_invite_menu
-    ${root}m:                 client_fullscreen!
+    ${root}f:                 client_fullscreen!
 
     ${root}${up}:             focus_client_up
     ${root}${down}:           focus_client_down
     ${root}${left}:           focus_client_left
     ${root}${right}:          focus_client_right
+    ${root}Tab:               focus_client_down
     ${size}comma:             focus_client_view_previous
     ${size}period:            focus_client_view_next
 
@@ -312,6 +312,12 @@ control:
 
     ${size}0:                 detach_group
     ${size}9:                 attach_client
+
+    #-------------------------------------------------------------------------
+    # Mouse-toggle
+    #-------------------------------------------------------------------------
+
+    ${root}m:                 mouse_toggle
 
     #-------------------------------------------------------------------------
     # volume
