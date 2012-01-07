@@ -23,7 +23,6 @@ display:
   client:
     rule: |
       /^pcmanfm:/ group=0
-      /^chromium:/ group=0 tags=www
 
   refresh: 30
   status:
@@ -142,7 +141,7 @@ control:
     #-------------------------------------------------------------------------
 
     ${root}i:                 action_menu
-    ${root}space:             launch_menu
+    ${root}Return:            launch_menu
 
     #-------------------------------------------------------------------------
     # client
@@ -193,7 +192,7 @@ control:
     ${swap}${down}:           swap_client_down
     ${swap}${left}:           swap_client_left
     ${swap}${right}:          swap_client_right
-    ${root}Return:            swap_client_master
+    ${root}m:                 swap_client_master
 
     ${swap}1:                 swap_client_column_1
     ${swap}2:                 swap_client_column_2
@@ -317,7 +316,7 @@ control:
     # Mouse-toggle
     #-------------------------------------------------------------------------
 
-    ${root}m:                 mouse_toggle
+    ${root}space:                 mouse_toggle
 
     #-------------------------------------------------------------------------
     # volume
