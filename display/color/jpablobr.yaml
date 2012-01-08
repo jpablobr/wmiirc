@@ -3,6 +3,6 @@ import:
 
 display:
   color:
-    desktop:  "#363946" # LineNr
-    focus:    "#cae682 #505860 #303840" # PmenuSel
-    normal:   "#e0e0e0 #202020 #202438" # Normal
+    desktop: "#363946"
+    focus:   "#FFFFFF #505860 #303840"
+    normal:  "#444444 #F8F8F8 #E9E9E9"
