@@ -1,0 +1,8 @@
+import:
+  - display/color/common.yaml
+
+display:
+  color:
+    desktop: "#EAF2F5"
+    focus:   "#111111 #EEF3E2 #ECF1EF"
+    normal:  "#111111 #F8F8F8 #ECF1EF"

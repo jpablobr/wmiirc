@@ -1,0 +1,31 @@
+status:
+  mouse:
+    script: |
+      @mouse_driver ||= 'ImPS/2 ALPS GlidePoint'
+      
+      def enabled?
+        %x[
+          xinput list-props "#{@mouse_driver}" | 
+          awk '/Device Enabled/ {print $NF}'
+        ].match /1/
+      end
+      
+      def toggle!
+        %x[
+          xinput --set-prop "#{@mouse_driver}" \
+          'Device Enabled' "#{self.enabled? ? 0 : 1}"
+        ]
+        refresh
+      end
+
+    label: |
+      color = self.enabled? ? 'error' : 'success'
+      
+      [color, "\u270D"]
+  
+    control:
+      action:
+        mouse_toggle: self.toggle!
+
+      mouse_action:
+        left_click: mouse_toggle
