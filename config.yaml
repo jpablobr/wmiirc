@@ -34,6 +34,10 @@ display:
             right_click: show_desktop
             wheel_up: focus_view_next
             wheel_down: focus_view_previous
+    - clock:
+        params:
+          format: '%l:%M%P %a %m/%d'
+    - mouse:
     - arrange:
         params:
           choices:
@@ -62,10 +66,6 @@ display:
     - loadavg:
     - battery:
     # - pomodoro:
-    - clock:
-        params:
-          format: '%l:%M%P %a %m/%d'
-    - mouse:
 
 control:
   action:

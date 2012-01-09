@@ -3,6 +3,6 @@ import:
 
 display:
   color:
-    desktop: "#363946"
-    focus:   "#FFFFFF #505860 #303840"
-    normal:  "#444444 #F8F8F8 #E9E9E9"
+    desktop: "#EAF2F5"
+    focus:   "#111111 #EEF3E2 #ECF1EF"
+    normal:  "#111111 #F8F8F8 #ECF1EF"
