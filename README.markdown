@@ -1,4 +1,4 @@
 wmii configuration
 ==================
 
-Based of https://github.com/sunaku/wmiirc
+Based off https://github.com/sunaku/wmiirc

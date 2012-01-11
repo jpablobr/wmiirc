@@ -17,7 +17,7 @@ script:
       # create buttons for tags in /lbar
       fs.lbar.clear
       tags.each {|t| event 'CreateTag', t }
-      event 'FocusTag', curr_tag  rescue nil
+      event 'FocusTag', curr_tag rescue nil
 
 control:
   event:

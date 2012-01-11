@@ -12,7 +12,7 @@ import:
 
 display:
   bar: top
-  font: 'xft:Sans-8'
+  font: 'xft:proggynormal-8'
   border: 1
   column:
     mode: default
@@ -67,10 +67,12 @@ display:
 
 control:
   action:
-    negative:        launch! 'xcalib -invert -alter'
-    terminal:        launch 'term'
-    browser:         launch 'chromium'
-    filer:           launch 'nautilus'
+    negative:        launch! '/usr/bin/xcalib -invert -alter'
+    terminal:        launch '~/bin/term'
+    browser:         launch '/usr/bin/chromium'
+    filer:           launch '/usr/bin/nautilus'
+    note:            launch '~/bin/e -q'
+    xlock:           launch '/usr/bin/xscreensaver-command -lock'
 
     projector: | # display through a projector
       system 'xrandr --output VGA1 --auto --output LVDS1 --off --dpi 96'
@@ -88,7 +90,6 @@ control:
 
     suspend: | # put laptop to sleep
       system 'sudo /etc/rc.d/networkmanager stop'
-      launch 'xlock' # password protection
       system 'sudo pm-suspend'
       system 'sudo /etc/rc.d/networkmanager start'
       action 'autotop'
@@ -114,6 +115,8 @@ control:
     ${root}x:                 terminal
     ${root}h:                 browser
     ${root}b:                 filer
+    ${root}w:                 note
+    Control-Mod1-l:           xlock
 
     #-------------------------------------------------------------------------
     # basic
