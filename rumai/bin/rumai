@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+require 'rumai'
+
+if ARGV.delete('-h') or ARGV.delete('--help')
+  system 'man', '-M', File.join(Rumai::INSTDIR, 'man'), 'rumai' or
+  warn "Could not display the help manual.\nSee #{Rumai::WEBSITE} instead."
+  exit
+elsif ARGV.delete('-v') or ARGV.delete('--version')
+  puts Rumai::VERSION
+  exit
+end
+
+require 'rumai/irb'
+require 'irb/completion'
+IRB.start_session Rumai

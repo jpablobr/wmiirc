@@ -1,0 +1,30 @@
+#!/usr/bin/env ruby
+#
+# Adds the project library directory
+# and this test directory to Ruby's
+# load path, loads the test helper
+# and executes the given test files.
+#
+# ruby test/runner [-d] [-v] [TEST]...
+#
+# -d    Enables $DEBUG mode in Ruby.
+#
+# -v    Enables $VERBOSE mode in Ruby.
+#
+# TEST  Path to a file, or a file globbing
+#       pattern describing a set of files.
+#
+#       The default value is all *_test.rb
+#       files beneath this test/ directory.
+
+$DEBUG   = true if ARGV.delete('-d')
+$VERBOSE = true if ARGV.delete('-v')
+
+lib_dir  = File.expand_path('../../lib', __FILE__)
+test_dir = File.expand_path('..', __FILE__)
+$LOAD_PATH.unshift lib_dir, test_dir
+
+require 'test_helper'
+
+ARGV << "#{test_dir}/**/*_test.rb" if ARGV.empty?
+ARGV.each {|glob| Dir[glob].each {|test| load test } }

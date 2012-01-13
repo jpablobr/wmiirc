@@ -1,0 +1,34 @@
+== DESCRIPTION
+
+Rumai is a pure <<Ruby>> interface to the <<wmii>> window manager.  Its name
+is a portmanteau of "**Ru**by" and "w**mi**i", which I pronounce as "vim eye".
+
+=== Features
+
+* Provides an interactive shell for live experimentation.
+
+* Arranges clients, columns, views, and tags dynamically.
+
+* Talks directly to wmii's <<libixp, IXP filesystem interface>>.
+
+* Includes a pure Ruby client for the <<p9p, 9P2000 protocol>>.
+
+* Powers http://github.com/sunaku/wmiirc[my personal] wmiirc and
+  http://github.com/sunaku/wmiirc/network[many others] like it.
+
+=== Resources
+
+Project website::
+<%= @proj_home_url = Rumai::WEBSITE %>
+
+Announcements feed::
+<%= @ann_feed_url = File.join(@proj_home_url, 'ann.xml') %>
+
+API documentation::
+<%= @api_docs_url = File.join(@proj_home_url, 'api/') %>
+
+Source code (browse online, download, or checkout)::
+<%= @code_repo_url = 'http://github.com/sunaku/rumai' %>
+
+Issue tracker (report bugs, request features, get help)::
+<%= @bug_track_url = File.join(@code_repo_url, 'issues') %>
