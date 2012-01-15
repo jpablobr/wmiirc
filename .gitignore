@@ -5,3 +5,5 @@ history/
 TAGS
 rumai/
 log-notes.md
+*.log
+*.log.bak
