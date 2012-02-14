@@ -3,8 +3,8 @@ import:
   - status/music/mpd.yaml
   - control/*.yaml
   - control/action/*.yaml
-  - display/tags.yaml
   - display/barlet.yaml
+  - display/tags.yaml
   - display/status.yaml
   - display/client.yaml
   - display/color/jpablobr.yaml
@@ -18,13 +18,33 @@ display:
     mode: default
     rule: |
       /gimp/ -> 17+83+41
+      /chat/ -> 17+83+41
       /.*/ -> 50+50
+
   client:
     rule: |
-      /^pcmanfm:/ group=0
+      /^wimenu:|^wmii9menu:/ tags=/./
+      /^xmessage:/ tags=/./ floating=on
+      /^xfce4-notifyd:/ tags=/./
+
+      /Thunar:File Operation Progress/
+
+      /^sonata:/ tags=1 allow=+activate
+
+      /^skype:/ tags=chat allow=+activate
+      /^Pidgin:/ tags=chat allow=+activate
+
+      /^gimp:/ tags=gimp
+
+      /^google-chrome:Google-chrome:Google-chrome Preferences$/ floating=on
+      /^google-chrome:Google-chrome:Task Manager/ floating=on
+      /^google-chrome:/ group=0
+
+      /^firefox:/ group=0
 
   refresh: 30
   status:
+    - notify:
     - notice:
         control:
           action:
@@ -69,7 +89,7 @@ control:
   action:
     negative:        launch! '/usr/bin/xcalib -invert -alter'
     terminal:        launch '~/bin/term'
-    browser:         launch '/usr/bin/chromium'
+    browser:         launch '/usr/bin/google-chrome'
     filer:           launch '/usr/bin/nautilus'
     note:            launch '~/bin/e -q'
     xlock:           launch '/usr/bin/xscreensaver-command -lock'

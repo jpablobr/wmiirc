@@ -1,0 +1,9 @@
+status:
+  notify:
+    script: |
+      require 'thread'
+      require File.join(File.dirname(__FILE__), '../tcp_server.rb')
+      @wmii_tcp_notifier ||= WmiiTCPNotify.new(5000)
+      Thread.new { @wmii_tcp_notifier.run }
+    label: |
+      ['normal', @wmii_tcp_notifier.message]

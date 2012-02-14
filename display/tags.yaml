@@ -17,24 +17,12 @@ script:
       # create buttons for tags in /lbar
       fs.lbar.clear
       tags.each {|t| event 'CreateTag', t }
-      event 'FocusTag', curr_tag # rescue nil
+      event 'FocusTag', curr_tag #rescue nil
 
 control:
   event:
     CreateTag: |
-      lbar = Rumai.fs.lbar
-      p lbar: lbar
-      p exist: lbar.exist?
-      p entries: lbar.entries
-      test = lbar.testing123
-      p test: test
-      p exist: test.exist?
-      p create: test.create
-      p exist: test.exist?
-      p write: test.write("label testing 123")
-      p remove: test.remove
-      p exist: test.exist?
-      TagBarlet.new(argv[0]) # rescue nil
+      TagBarlet.new(argv[0]) #rescue nil
 
     DestroyTag: |
       TagBarlet.new(argv[0]).remove
