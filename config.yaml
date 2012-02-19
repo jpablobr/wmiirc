@@ -125,10 +125,10 @@ control:
     root:    Mod4-
     send:    ${root}Shift-
     size:    ${root}Control-
-    swap:    ${root}w,
-    view:    ${root}v,
+    swap:    ${root}o,
+    view:    ${root}m,
     group:   ${root}g,
-    layout:  ${root}z,
+    layout:  ${root}l,
 
   keyboard_action:
     XF86Display:              negative
@@ -157,8 +157,8 @@ control:
     ${root}${down}:           focus_client_down
     ${root}${left}:           focus_client_left
     ${root}${right}:          focus_client_right
-    ${root}Tab:               focus_client_down
-    ${size}comma:             focus_client_view_previous
+    ${root}Tab:               focus_client_view_previous
+    ${size},:                 focus_client_view_previous
     ${size}period:            focus_client_view_next
 
     ${size}${up}:             resize_client_up
@@ -215,7 +215,7 @@ control:
 
     #-------------------------------------------------------------------------
     # view
-    #-------------------------------------------------------------------------
+#-------------------------------------------------------------------------
 
     ${root}comma:             focus_view_previous
     ${root}period:            focus_view_next
