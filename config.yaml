@@ -125,7 +125,7 @@ control:
     root:    Mod4-
     send:    ${root}Shift-
     size:    ${root}Control-
-    swap:    ${root}o,
+    swap:    ${root}t,
     view:    ${root}m,
     group:   ${root}g,
     layout:  ${root}l,
@@ -156,6 +156,7 @@ control:
     ${root}${up}:             focus_client_up
     ${root}${down}:           focus_client_down
     ${root}${left}:           focus_client_left
+    ${root}o:                 focus_client_left
     ${root}${right}:          focus_client_right
     ${root}Tab:               focus_client_view_previous
     ${size},:                 focus_client_view_previous
@@ -219,7 +220,7 @@ control:
 
     ${root}comma:             focus_view_previous
     ${root}period:            focus_view_next
-    ${root}o:                 focus_view_recent
+    ${root}x:                 focus_view_recent
     ${root}u:                 focus_view_menu
 
     ${root}1:                 focus_view_1
